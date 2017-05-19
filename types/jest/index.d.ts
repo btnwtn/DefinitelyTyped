@@ -178,6 +178,11 @@ declare namespace jest {
     interface Matchers {
         /** If you know how to test something, `.not` lets you test its opposite. */
         not: Matchers;
+        /** Jest will wait for a Promise to resolve. If the promise is rejected, the test will automatically fail. */
+        resolves: Matchers;
+        /** If you expect a promise to be rejected use the .rejects matcher. */
+        reject: Matchers;
+        
         lastCalledWith(...args: any[]): void;
         /** Checks that a value is what you expect. It uses `===` to check strict equality. Don't use `toBe` with floating-point numbers. */
         toBe(expected: any): void;
